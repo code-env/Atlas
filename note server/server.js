@@ -1,19 +1,20 @@
-const mongoose = require("mongoose");
-const Document = require("./Document");
+import mongoose from "mongoose";
+import Document from "./Document.js";
 require("dotenv").config();
 
 const connectDB = async () => {
-  await mongoose
-    .connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-    .then(() => {
-      console.log("db connected");
-    })
-    .catch((err) => {
-      console.log(err.message);
-    });
+  try {
+    await mongoose.connect(
+      "mongodb+srv://zenith:Hh0feUGzbxKod4qY@atlas.70hcd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+      {
+        useNewUrlParser: "true",
+        useUnifiedTopology: "true",
+      }
+    );
+    console.log("connected to DB");
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 connectDB();
