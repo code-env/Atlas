@@ -5,7 +5,7 @@ require("dotenv").config();
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://zenith:Hh0feUGzbxKod4qY@atlas.70hcd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+      // "mongodb+srv://zenith:Hh0feUGzbxKod4qY@atlas.70hcd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
       {
         useNewUrlParser: "true",
         useUnifiedTopology: "true",
