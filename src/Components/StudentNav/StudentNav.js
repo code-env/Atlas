@@ -24,8 +24,9 @@ const StudentNav = ({ isOpen, setIsOpen }) => {
   };
 
   const handleLogOut = () => {
+    window.localStorage.clear();
+
     window.location.reload();
-    /*   JSON.stringify(localStorage.setItem("theme", "light")); */
   };
 
   return (

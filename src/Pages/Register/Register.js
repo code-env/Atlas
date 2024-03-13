@@ -7,8 +7,9 @@ import { Link } from "react-router-dom";
 import { FaFacebook, FaGoogle, FaTwitter } from "react-icons/fa";
 import { registerStudent, reset } from "../../redux/reducers/authSlice";
 import { Spinner } from "../../Components";
+import "./Register.scss";
 
-const Register = () => {
+const Login = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -75,7 +76,7 @@ const Register = () => {
   }
 
   return (
-    <div className="app__Register">
+    <div className="app__login">
       <div className="login__container">
         <div className="left__login-container">
           <div className="logo">
@@ -173,4 +174,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

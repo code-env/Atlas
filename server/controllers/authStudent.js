@@ -73,11 +73,11 @@ module.exports.loginStudent = async (req, res) => {
     if (!validPassword) return res.status(400).json("wrong password");
 
     // checking if the user verified the email.
-    if (!student.isVerified) {
-      return res.status(400).json({
-        message: "Please verify your email",
-      });
-    }
+    // if (!student.isVerified) {
+    //   return res.status(400).json({
+    //     message: "Please verify your email",
+    //   });
+    // }
 
     res.status(200).json(student);
   } catch (error) {

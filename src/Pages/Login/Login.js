@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { loginStudent, reset } from "../../redux/reducers/authSlice";
 import { Spinner } from "../../Components";
+
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
