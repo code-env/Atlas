@@ -8,7 +8,7 @@ import { FaFacebook, FaGoogle, FaTwitter } from "react-icons/fa";
 import { registerStudent, reset } from "../../redux/reducers/authSlice";
 import { Spinner } from "../../Components";
 
-const Login = () => {
+const Register = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -60,7 +60,7 @@ const Login = () => {
     dispatch(reset());
   }, [isError, isSuccess, message, student, navigate, dispatch]);
 
-  console.log(isError);
+  console.log(isError, message);
 
   useEffect(() => {
     //getStudent localStorage
@@ -75,7 +75,7 @@ const Login = () => {
   }
 
   return (
-    <div className="app__login">
+    <div className="app__Register">
       <div className="login__container">
         <div className="left__login-container">
           <div className="logo">
@@ -173,4 +173,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

@@ -2,6 +2,7 @@ import axios from "axios";
 import { auth } from "../../api/endpoints";
 
 const registerStudent = async (studentData) => {
+  console.log(studentData);
   const response = await axios.post(auth + "register", studentData);
 
   if (response.data) {

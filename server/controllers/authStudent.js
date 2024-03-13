@@ -25,25 +25,9 @@ module.exports.createStudent = async (req, res) => {
     emailToken: crypto.randomBytes(64).toString("hex"),
   });
 
-  user.save((err, user) => {
-    if (err) {
-      return res.status(400).json({
-        message: "Error while creating user",
-      });
-    }
-    sendGrid.send({
-      to: user.email,
-      from: {
-        name: "Atlas",
-        email: process.env.SENDER__EMAIL,
-      },
-      subject: "Verify your email",
-      html: `<h1>Verify your email</h1>
-      <p>Please click on the link to verify your email</p>
-      <a href="http://${req.headers.host}/api/auth/verify/${user.emailToken}">Verify Email</a>`,
-    });
-    res.status(200).json(user);
-  });
+  user.save();
+
+  res.status(200).json(user);
 };
 
 //veryfying the student email
